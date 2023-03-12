@@ -1,0 +1,48 @@
+
+
+.container { 
+    display: flex;
+    background-color: green;
+}
+
+.leftsideContainer { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle { 
+    display: flex;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+}
+
+.verticalbar { 
+    display: flex;
+    background-color: white;
+    width: 1rem;
+    /* TODO: Change the height on this */
+    height: 1rem;
+    /* TODO: Change the flex-grow to flex shorthand*/
+    flex-grow: 1;
+}
+
+
+.rightContainer { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.title { 
+    font-size: 2rem;
+    color: yellow;
+}
+
+.description { 
+    font-size: 1rem;
+    color: blue;
+}

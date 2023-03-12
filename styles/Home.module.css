@@ -18,6 +18,23 @@
   font-family: var(--font-mono);
 }
 
+.description h1 { 
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  font-size: 2rem;
+}
+
+.description p {
+  position: relative;
+  margin: 0;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  /* border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius); */
+  font-size: 1.6rem;
+}
+
 .description a {
   display: flex;
   justify-content: center;
@@ -25,14 +42,40 @@
   gap: 0.5rem;
 }
 
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
+.name { 
+  display: inherit;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* padding: 1rem; */
 }
+
+.name p:first-child { 
+  font-size: 2rem;
+  padding-bottom: 0px;
+}
+
+.introduction {
+  display: flex;
+  height: 100px !important;
+  width: 100%;
+  /* width: 100px !important; */
+  /* background-color: purple; */
+  color: white;
+  /* z-index: 5; */
+}
+
+
+/* .introduction p  {
+  display: flex;
+  width: 100%;
+  font-size: 40px !important;
+  position: absolute !important;
+  color: white !important;
+  opacity: 0;
+  background: pink !important;
+} */
+
+
 
 .code {
   font-weight: 700;
@@ -179,6 +222,10 @@
     padding: 4rem;
   }
 
+  .main { 
+    padding: 3rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
@@ -219,7 +266,10 @@
     width: 100%;
   }
 
-  .description p {
+ 
+
+  /* top on mobile */
+  .description p:first-child {
     align-items: center;
     inset: 0 0 auto;
     padding: 2rem 1rem 1.4rem;
@@ -231,10 +281,15 @@
       rgba(var(--background-start-rgb), 1),
       rgba(var(--callout-rgb), 0.5)
     );
+    background: green;
+
     background-clip: padding-box;
     backdrop-filter: blur(24px);
+
+    
   }
 
+  /* this is the bottom on mobile */
   .description div {
     align-items: flex-end;
     pointer-events: none;
@@ -246,6 +301,7 @@
       transparent 0%,
       rgb(var(--background-end-rgb)) 40%
     );
+    background: blue;
     z-index: 1;
   }
 }
