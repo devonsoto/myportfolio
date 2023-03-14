@@ -1,8 +1,8 @@
-.container { 
-    display: flex;
-    align-items: flex-start;
+.container {
+  display: flex;
+  align-items: center;
 }
 
-.container a { 
-    padding: 2rem;
+.container a {
+  padding: 2rem;
 }

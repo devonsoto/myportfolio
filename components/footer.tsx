@@ -7,15 +7,27 @@ export const Footer = () => {
       <h3>Thanks for visiting</h3>
       <div className={styles.linksSection}>
         <div className={styles.first}>
-          <Link href={"www.linkedn.com"}>Linkden </Link>
-          <Link href={"www.github.com"}>Github </Link>
+          <a
+            target={"_blank"}
+            href={"https://www.linkedin.com/in/devonsoto/"}
+            rel="noreferrer noopener"
+          >
+            Linkedin
+          </a>
+          <a
+            target={"_blank"}
+            href={"https://github.com/devonsoto77"}
+            rel="noreferrer noopener"
+          >
+            Github
+          </a>
         </div>
         <div className={styles.first}>
           <Link href={"/"}>Home</Link>
           <Link href={"contactme"}>Contact Me </Link>
         </div>
       </div>
-      <div className={styles.copyright}>2023 Devon Soto</div>
+      <div className={styles.copyright}>© 2023 Devon Soto</div>
     </div>
   );
 };
