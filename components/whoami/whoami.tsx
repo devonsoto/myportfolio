@@ -6,14 +6,15 @@ export const Whoami = () => {
     <div className={styles.container}>
       <h1>Whoami</h1>
       <p>
-        I am a Software Engineer for Workday, Inc specializing in front end
-        development. I help create simple yet elegant web applications for
-        users. Once the workday is over I enjoy spending time outside or at a
-        recovery center sitting in a cold tub. Looking to work together?
+        Hello! I am a Software Engineer for Workday, Inc specializing in front
+        end development. The frameworks that I use most often are React and
+        NextJs. When I create web applications I focus on user experience,
+        attention to detail and inclusively. I also enjoy learning new
+        technologies such as aws and chatgpt. Once the workday is over I enjoy
+        spending time outside or at a recovery center sitting in a cold tub.
+        Looking to work together? 👉
         <Link href={"/contactme"}> Contact me here. </Link>
       </p>
     </div>
   );
 };
-
-//  I love my dog and two cats.

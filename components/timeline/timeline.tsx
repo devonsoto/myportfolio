@@ -16,17 +16,25 @@ interface TimelineProps {
 
 export const Timeline = () => {
   const contentList = test.info;
-  console.log(test);
+  // console.log(test);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.leftsideContainer}>
-        <div className={styles.circle} />
-        <div className={styles.verticalbar} />
-      </div>
-      <div className={styles.rightContainer}>
-        <div className={styles.title}>{contentList[0].title}</div>
-        <div className={styles.description}>{contentList[0].description}</div>
+    <div className={styles.timeline}>
+      <h1 className={styles.experiences}>Experiences</h1>
+      <div className={styles.container}>
+        {/* <div className={styles.verticalbar} /> */}
+        {contentList.map((info, index) => (
+          <>
+            {/* <div className={styles.leftsideContainer}></div> */}
+            <div className={styles.rightContainer} key={index}>
+              {/* <div className={styles.circle} /> */}
+              <div className={styles.title}>{contentList[index].title}</div>
+              <div className={styles.description}>
+                {contentList[index].description}
+              </div>
+            </div>
+          </>
+        ))}
       </div>
     </div>
   );
