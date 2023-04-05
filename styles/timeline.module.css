@@ -50,6 +50,10 @@
   background-color: white;
 }
 
+.date {
+  font-size: 1rem;
+  color: grey;
+}
 
 .leftsideContainer {
   display: flex;
@@ -83,11 +87,12 @@
   align-items: flex-start;
   /* background-color: blueviolet; */
   margin-left: 40px;
+  margin-bottom: 2rem;
 }
 
 .title {
   position: relative;
-  font-size: 2rem;
+  font-size: 1.5rem;
   /* color: yellow; */
   /* background-color: pink; */
 }
