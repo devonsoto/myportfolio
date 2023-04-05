@@ -25,18 +25,31 @@
   align-self: flex-start;
 } */
 
-.container::after {
+.rightContainer::after {
   position: absolute;
-  top: 1px;
+  top: 20px;
   content: "";
   background-color: white;
-  width: 10px;
+  width: 3px;
   height: 100%;
+  left: 0px;
   /* TODO: Change the height on this */
   /* height: 1rem; */
   /* TODO: Change the flex-grow to flex shorthand*/
   /* flex-grow: 1; */
 }
+
+.title::after {
+  position: absolute;
+  top: 17px;
+  left: -48px;
+  content: "";
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+}
+
 
 .leftsideContainer {
   display: flex;
@@ -46,13 +59,13 @@
   /* background-color: blue; */
 }
 
-.circle {
+/* .circle {
   display: flex;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background-color: white;
-}
+} */
 
 .verticalbar {
   display: flex;
@@ -79,16 +92,16 @@
   /* background-color: pink; */
 }
 
-.title::after {
+/* .title::after {
   position: absolute;
   top: 0px;
   left: -50px;
   content: "";
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background-color: white;
-}
+} */
 
 .description {
   font-size: 1rem;

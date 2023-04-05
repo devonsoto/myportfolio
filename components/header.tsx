@@ -7,7 +7,7 @@ import { HomeIcon } from "@heroicons/react/24/solid";
 export const Header = () => {
   return (
     <header className={styles.container}>
-      <Link href={"/"} className={styles.hover}>
+      <Link href={"/"}>
         <Home />
       </Link>
       <Link href={"/contactme"}>Contact Me</Link>

@@ -28,10 +28,10 @@ export const Timeline = () => {
             {/* <div className={styles.leftsideContainer}></div> */}
             <div className={styles.rightContainer} key={index}>
               {/* <div className={styles.circle} /> */}
-              <div className={styles.title}>{contentList[index].title}</div>
-              <div className={styles.description}>
+              <p className={styles.title}>{contentList[index].title}</p>
+              <p className={styles.description}>
                 {contentList[index].description}
-              </div>
+              </p>
             </div>
           </>
         ))}

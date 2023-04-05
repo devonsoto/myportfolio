@@ -62,7 +62,7 @@ export default function Home() {
 
         <Timeline />
 
-        <div className={styles.center}>
+        {/* <div className={styles.center}>
           <Image
             className={styles.logo}
             src="/next.svg"
@@ -80,9 +80,9 @@ export default function Home() {
               priority
             />
           </div>
-        </div>
+        </div> */}
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -139,7 +139,7 @@ export default function Home() {
               with&nbsp;Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
       <Footer />
     </>
