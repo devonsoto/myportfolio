@@ -29,44 +29,54 @@ export const Timeline = () => {
       </p>
       <div className={styles.container}>
         <div className={styles.rightContainer}>
-          <p className={styles.title}>Software Engineer at Workday</p>
-          <p className={styles.date}>2020 - Current</p>
+          <p className={styles.title}>Workday, Inc</p>
+          <p className={styles.date}>
+            Boulder, CO, Software Engineer, 2020 - Current
+          </p>
           <p className={styles.description}>
-            I am incredibly grateful for the opportunity to work at Workday,
-            where I had the privilege of contributing to the development of
-            multiple products that were used by a wide range of clients.
+            I worked on a key product that many of our users interact with
+            immediately upon logging into the platform. One of my main
+            accomplishments was helping with a full refactor of the product's
+            codebase. I also implemented a comprehensive testing system, which
+            helped to catch issues early and prevent regressions as we continued
+            to develop the product.
           </p>
         </div>
         <div className={styles.rightContainer}>
-          {/* <div className={styles.circle} /> */}
-          <p className={styles.title}>Software Engineer Intern at Workday</p>
-          <p className={styles.date}>2017 - 2020</p>
+          <p className={styles.title}>Workday, Inc</p>
+          <p className={styles.date}>
+            Boulder, CO, Software Engineer Intern, 2017 - 2020
+          </p>
           <p className={styles.description}>
-            I am incredibly grateful for the opportunity to work at Workday,
-            where I had the privilege of contributing to the development of
-            multiple products that were used by a wide range of clients.
+            As a software engineering intern, I worked on a variety of projects
+            that helped me to develop my technical skills and gain practical
+            experience in the field. It helped me excel in ReactJS, Emotion and
+            user experience. I learned about E2E and CI using Cypress and
+            Jenkins. I'm grateful for the opportunity to have worked as a
+            software engineering intern.
           </p>
         </div>
         <div className={styles.rightContainer}>
-          {/* <div className={styles.circle} /> */}
-          <p className={styles.title}>
-            Sr Associate Software Development Engineer
-          </p>
+          <p className={styles.title}>Nimb.ly</p>
+          <p className={styles.date}>Boulder, CO, Co-Founder, 2018 - 2019</p>
           <p className={styles.description}>
-            I am incredibly grateful for the opportunity to work at Workday,
-            where I had the privilege of contributing to the development of
-            multiple products that were used by a wide range of clients.
+            In this experience, my partner and I created a startup called
+            Nimb.ly. To address the challenge of catering business finding
+            employees we attempted to create a hiring platform that automated
+            the entire recruitment process. We entered a startup challenge
+            called New Venture Challenge (NVC), where we placed top 10 out of
+            100+ startups and were funded $11,000.
           </p>
         </div>
         <div className={styles.rightContainer}>
-          {/* <div className={styles.circle} /> */}
-          <p className={styles.title}>
-            Sr Associate Software Development Engineer
+          <p className={styles.title}>Harris Corporation</p>
+          <p className={styles.date}>
+            Colorado Springs, CO, Software Engineer Intern, 2017
           </p>
           <p className={styles.description}>
-            I am incredibly grateful for the opportunity to work at Workday,
-            where I had the privilege of contributing to the development of
-            multiple products that were used by a wide range of clients.
+            Assisted in writing JUnit tests and created a script in Python to
+            automatically update JSON files. Created a React site to visually
+            display data returned from updated JSON files
           </p>
         </div>
       </div>

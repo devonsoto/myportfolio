@@ -33,10 +33,21 @@
   width: 3px;
   height: 100%;
   left: 0px;
+
   /* TODO: Change the height on this */
   /* height: 1rem; */
   /* TODO: Change the flex-grow to flex shorthand*/
   /* flex-grow: 1; */
+}
+
+.rightContainer:last-child:after {
+  position: absolute;
+  top: 20px;
+  content: "";
+  background-color: white;
+  width: 3px;
+  height: 100%;
+  left: 0px;
 }
 
 .title::after {
