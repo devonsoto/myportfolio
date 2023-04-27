@@ -37,10 +37,10 @@ export const Timeline = () => {
           <p className={styles.description}>
             I worked on a key product that many of our users interact with
             immediately upon logging into the platform. One of my main
-            accomplishments was helping with a full refactor of the product's
-            codebase. I also implemented a comprehensive testing system, which
-            helped to catch issues early and prevent regressions as we continued
-            to develop the product.
+            accomplishments was helping with a full refactor of the
+            product&apos;s codebase. I also implemented a comprehensive testing
+            system, which helped to catch issues early and prevent regressions
+            as we continued to develop the product.
           </p>
         </div>
         <div className={styles.rightContainer}>
@@ -53,7 +53,7 @@ export const Timeline = () => {
             that helped me to develop my technical skills and gain practical
             experience in the field. It helped me excel in ReactJS, Emotion and
             user experience. I learned about E2E and CI using Cypress and
-            Jenkins. I'm grateful for the opportunity to have worked as a
+            Jenkins. I&apos;m grateful for the opportunity to have worked as a
             software engineering intern.
           </p>
         </div>
