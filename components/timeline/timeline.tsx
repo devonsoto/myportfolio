@@ -21,12 +21,13 @@ export const Timeline = () => {
   return (
     <div className={styles.timeline}>
       <h1 className={styles.experiences}>Experiences</h1>
-      <p>
-        download my resume{" "}
+      {/* TODO: Add option to add resume once your resume is complete lol*/}
+      {/* <p>
+        Download my resume{" "}
         <a href="your_resume.pdf" download>
-          <button>Download Resume</button>
+          <button> Download Resume</button>
         </a>
-      </p>
+      </p> */}
       <div className={styles.container}>
         <div className={styles.rightContainer}>
           <p className={styles.title}>Workday, Inc</p>

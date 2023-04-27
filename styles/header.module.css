@@ -7,4 +7,6 @@
   padding: 2rem;
 }
 
-
+.container a:hover {
+  color: #ba181b;
+}

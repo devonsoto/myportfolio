@@ -17,6 +17,10 @@
   padding-bottom: 1rem;
 }
 
+.container a:hover {
+  color: #ba181b;
+}
+
 .linksSection {
   display: inherit;
   justify-content: space-between;

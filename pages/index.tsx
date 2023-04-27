@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Whoami } from "@/components/whoami/whoami";
 import { AnimatedText } from "@/components/animatedText";
+import { Projects } from "@/components/projects/projects";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,6 +62,8 @@ export default function Home() {
         <Whoami />
 
         <Timeline />
+
+        <Projects />
 
         {/* <div className={styles.center}>
           <Image
