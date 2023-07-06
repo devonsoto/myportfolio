@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 6rem;
+  margin-top: 4rem;
   min-height: 100vh;
 }
 
@@ -56,7 +57,7 @@
 
 .introduction {
   display: flex;
-  height: 100px !important;
+  /* height: 100px !important; */
   width: 100%;
   /* width: 100px !important; */
   /* background-color: purple; */

@@ -1,5 +1,5 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { Header } from "@/app/header";
+import { Footer } from "@/app/footer";
 import styles from "@/styles/contactMe.module.css";
 
 export const ContactMe = () => {

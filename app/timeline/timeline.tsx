@@ -20,7 +20,7 @@ export const Timeline = () => {
 
   return (
     <div className={styles.timeline}>
-      <h1 className={styles.experiences}>Experiences</h1>
+      <h1 className="text-4xl mb-5">Experiences</h1>
       {/* TODO: Add option to add resume once your resume is complete lol*/}
       {/* <p>
         Download my resume{" "}
