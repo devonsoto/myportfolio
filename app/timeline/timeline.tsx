@@ -1,26 +1,26 @@
-import styles from "@/styles/timeline.module.css";
-import test from "./mockdata.json";
+import styles from '@/styles/timeline.module.css'
+import test from './mockdata.json'
 
 // TODO: Move this to the right place
 interface Description {
-  title: string;
-  description: string[];
-  dates?: string;
-  image?: any;
-  link?: any;
+  title: string
+  description: string[]
+  dates?: string
+  image?: any
+  link?: any
 }
 
 interface TimelineProps {
-  contentList?: Description;
+  contentList?: Description
 }
 
 export const Timeline = () => {
-  const contentList = test.info;
+  const contentList = test.info
   // console.log(test);
 
   return (
     <div className={styles.timeline}>
-      <h1 className="text-4xl mb-5">Experiences</h1>
+      <h1 className='text-4xl mb-5 text-sec'>Experiences</h1>
       {/* TODO: Add option to add resume once your resume is complete lol*/}
       {/* <p>
         Download my resume{" "}
@@ -82,10 +82,10 @@ export const Timeline = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline
 
 // circle
 // vertical line
