@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import "./animatedText.module.css";
 import styles from "@/components/animatedText.module.css";

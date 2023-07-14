@@ -1,26 +1,26 @@
-import styles from "@/styles/timeline.module.css";
-import test from "./mockdata.json";
+import styles from '@/styles/timeline.module.css'
+import test from './mockdata.json'
 
 // TODO: Move this to the right place
 interface Description {
-  title: string;
-  description: string[];
-  dates?: string;
-  image?: any;
-  link?: any;
+  title: string
+  description: string[]
+  dates?: string
+  image?: any
+  link?: any
 }
 
 interface TimelineProps {
-  contentList?: Description;
+  contentList?: Description
 }
 
 export const Timeline = () => {
-  const contentList = test.info;
+  const contentList = test.info
   // console.log(test);
 
   return (
     <div className={styles.timeline}>
-      <h1 className={styles.experiences}>Experiences</h1>
+      <h1 className='text-4xl mb-5 text-sec'>Experiences</h1>
       {/* TODO: Add option to add resume once your resume is complete lol*/}
       {/* <p>
         Download my resume{" "}
@@ -37,10 +37,30 @@ export const Timeline = () => {
           <p className={styles.description}>
             I worked on a key product that many of our users interact with
             immediately upon logging into the platform. One of my main
-            accomplishments was helping with a full refactor of the
-            product&apos;s codebase. I also implemented a comprehensive testing
-            system, which helped to catch issues early and prevent regressions
-            as we continued to develop the product.
+            accomplishments was setting up our testing infrastructure and helping with a full refactor of the
+            product&apos;s codebase. 
+          </p>
+        </div>
+        <div className={styles.rightContainer}>
+          <p className={styles.title}>Empowering Software</p>
+          <p className={styles.date}>
+            Co Founder, Jan 2023 - Current
+          </p>
+          <p className={styles.description}>
+          Spreading the power of AI to non-tech professions by interviewing different professions and creating
+resources.
+          </p>
+        </div>
+        <div className={styles.rightContainer}>
+          <p className={styles.title}>Nimb.ly</p>
+          <p className={styles.date}>Boulder, CO, Co-Founder, 2018 - 2019</p>
+          <p className={styles.description}>
+            In this experience, my partner and I created a startup called
+            Nimb.ly. To address the challenge of catering business finding
+            employees we attempted to create a hiring platform that automated
+            the entire recruitment process. We entered a startup challenge
+            called New Venture Challenge (NVC), where we placed top 10 out of
+            100+ startups and were funded $11,000.
           </p>
         </div>
         <div className={styles.rightContainer}>
@@ -58,18 +78,6 @@ export const Timeline = () => {
           </p>
         </div>
         <div className={styles.rightContainer}>
-          <p className={styles.title}>Nimb.ly</p>
-          <p className={styles.date}>Boulder, CO, Co-Founder, 2018 - 2019</p>
-          <p className={styles.description}>
-            In this experience, my partner and I created a startup called
-            Nimb.ly. To address the challenge of catering business finding
-            employees we attempted to create a hiring platform that automated
-            the entire recruitment process. We entered a startup challenge
-            called New Venture Challenge (NVC), where we placed top 10 out of
-            100+ startups and were funded $11,000.
-          </p>
-        </div>
-        <div className={styles.rightContainer}>
           <p className={styles.title}>Harris Corporation</p>
           <p className={styles.date}>
             Colorado Springs, CO, Software Engineer Intern, 2017
@@ -82,10 +90,10 @@ export const Timeline = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline
 
 // circle
 // vertical line
