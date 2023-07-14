@@ -5,7 +5,7 @@ export async function POST() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "API-Key": process.env.DATA_API_KEY,
+      "API-Key": process.env.DATA_API_KEY || "",
     },
   });
   const data = await res.json();
