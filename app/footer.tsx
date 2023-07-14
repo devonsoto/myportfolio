@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import styles from '@/styles/footer.module.css'
+import { SVGProps } from 'react'
+
 
 const navigation = {
   social: [
@@ -7,7 +9,7 @@ const navigation = {
       name: 'GitHub',
       target: '_blank',
       href: 'https://github.com/devonsoto77',
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg
           fill='currentColor'
           viewBox='0 0 24 24'
@@ -27,7 +29,7 @@ const navigation = {
       name: 'Linkedin',
       target: '_blank',
       href: 'https://www.linkedin.com/in/devonsoto/',
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg
           fill='currentColor'
           viewBox='0 0 24 24'
@@ -44,7 +46,7 @@ const navigation = {
 
 export const Footer = () => {
   return (
-    <footer className='bg-white'>
+    <footer className='bg-blackPrim'>
       <div className='mx-auto max-w-7xl overflow-hidden px-6 sm:py-8 lg:px-8 py-8'>
         <div className='mt-10 flex justify-center space-x-10'>
           {navigation.social.map((item) => (

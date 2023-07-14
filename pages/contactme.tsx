@@ -1,4 +1,4 @@
-import { Header } from "@/app/header";
+import  Header  from "@/app/header";
 import { Footer } from "@/app/footer";
 import styles from "@/styles/contactMe.module.css";
 

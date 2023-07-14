@@ -37,10 +37,30 @@ export const Timeline = () => {
           <p className={styles.description}>
             I worked on a key product that many of our users interact with
             immediately upon logging into the platform. One of my main
-            accomplishments was helping with a full refactor of the
-            product&apos;s codebase. I also implemented a comprehensive testing
-            system, which helped to catch issues early and prevent regressions
-            as we continued to develop the product.
+            accomplishments was setting up our testing infrastructure and helping with a full refactor of the
+            product&apos;s codebase. 
+          </p>
+        </div>
+        <div className={styles.rightContainer}>
+          <p className={styles.title}>Empowering Software</p>
+          <p className={styles.date}>
+            Co Founder, Jan 2023 - Current
+          </p>
+          <p className={styles.description}>
+          Spreading the power of AI to non-tech professions by interviewing different professions and creating
+resources.
+          </p>
+        </div>
+        <div className={styles.rightContainer}>
+          <p className={styles.title}>Nimb.ly</p>
+          <p className={styles.date}>Boulder, CO, Co-Founder, 2018 - 2019</p>
+          <p className={styles.description}>
+            In this experience, my partner and I created a startup called
+            Nimb.ly. To address the challenge of catering business finding
+            employees we attempted to create a hiring platform that automated
+            the entire recruitment process. We entered a startup challenge
+            called New Venture Challenge (NVC), where we placed top 10 out of
+            100+ startups and were funded $11,000.
           </p>
         </div>
         <div className={styles.rightContainer}>
@@ -55,18 +75,6 @@ export const Timeline = () => {
             user experience. I learned about E2E and CI using Cypress and
             Jenkins. I&apos;m grateful for the opportunity to have worked as a
             software engineering intern.
-          </p>
-        </div>
-        <div className={styles.rightContainer}>
-          <p className={styles.title}>Nimb.ly</p>
-          <p className={styles.date}>Boulder, CO, Co-Founder, 2018 - 2019</p>
-          <p className={styles.description}>
-            In this experience, my partner and I created a startup called
-            Nimb.ly. To address the challenge of catering business finding
-            employees we attempted to create a hiring platform that automated
-            the entire recruitment process. We entered a startup challenge
-            called New Venture Challenge (NVC), where we placed top 10 out of
-            100+ startups and were funded $11,000.
           </p>
         </div>
         <div className={styles.rightContainer}>

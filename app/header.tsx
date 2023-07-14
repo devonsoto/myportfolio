@@ -10,8 +10,8 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const navigation = [
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Technologies", href: "#technologies" },
+  // { name: "Projects", href: "#projects" },
+  // { name: "Technologies", href: "#technologies" },
   { name: "Contact Me", href: "#contact" },
 ];
 
@@ -21,7 +21,7 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
   return (
-    <header className="bg-black fixed w-full z-10">
+    <header className=" bg-blackPrim fixed w-full z-10">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:px-8"
         aria-label="Global"
@@ -60,7 +60,7 @@ export default function Header() {
                   </Link>
                 )}
               </Menu.Item>
-              <Menu.Item>
+              {/* <Menu.Item>
                 {({ active }) => (
                   <Link
                     href="#projects"
@@ -85,7 +85,7 @@ export default function Header() {
                     Technologies
                   </Link>
                 )}
-              </Menu.Item>
+              </Menu.Item> */}
               <Menu.Item>
                 {({ active }) => (
                   <Link

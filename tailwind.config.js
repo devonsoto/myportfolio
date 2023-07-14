@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         prim: "#023E8A",
         sec: "#0077B6",
+        blackPrim: '#111827'
       },
     },
   },
