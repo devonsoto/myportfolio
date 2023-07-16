@@ -7,6 +7,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [disabled, setDisabled] = useState(true);
 
@@ -16,6 +17,8 @@ export default function Contact() {
       email,
       message,
     };
+
+    setLoading(true);
 
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/email";
@@ -32,9 +35,11 @@ export default function Contact() {
 
     if (response.ok) {
       setSuccess(true);
+      setLoading(false);
     }
     if (!response.ok) {
       setSuccess(false);
+      setLoading(false);
       alert("Try again later");
     }
   };
@@ -56,7 +61,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="relative isolate pb-24 sm:py-32 text-sec pt-20 mt-[-20px] "
+      className="relative isolate mt-[-20px] pb-24 pt-20 text-sec sm:py-32 "
     >
       <div className="mx-auto max-w-xl lg:max-w-4xl">
         <h2 className="text-4xl font-bold tracking-tight">
@@ -102,7 +107,7 @@ export default function Contact() {
                     value={email}
                     onChange={(event) => setEmail(event?.target.value)}
                     id="email"
-                    className="invalid:border-red-500 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 invalid:border-red-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -129,16 +134,18 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-10">
-              {success ? (
+              {loading && <div>Sending ...</div>}
+              {success && (
                 <div>Message sent, we&apos;ll be in contact soon!</div>
-              ) : (
+              )}
+              {!success && !loading && (
                 <button
                   disabled={disabled}
                   onClick={(event) => {
                     event.preventDefault();
                     postUsers();
                   }}
-                  className="disabled:opacity-75 disabled:pointer-events-none disabled:bg-slate-400 block w-full rounded-md bg-sec px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-prim focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="block w-full rounded-md bg-sec px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-prim focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:pointer-events-none disabled:bg-slate-400 disabled:opacity-75"
                 >
                   Let’s talk
                 </button>

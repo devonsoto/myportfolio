@@ -3,7 +3,10 @@ import { error } from "console";
 import type { NextApiRequest, NextApiResponse } from "next";
 import * as postmark from "postmark";
 
-const serverToken = process.env.POST_TOKEN || "";
+// console.log(process.env.)
+const serverToken = process.env.postmarkToken || "";
+// console.log(serverToken);
+
 let client = new postmark.ServerClient(serverToken);
 
 export default function handler(
