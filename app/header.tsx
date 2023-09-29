@@ -27,7 +27,7 @@ export default function Header() {
         aria-label="Global"
       >
         <span>Devon Soto</span>
-        <Link href="/" className="-m-1.5 p-1.5">
+        <Link href="/" className="-m-1.5 p-1.5" legacyBehavior>
           <span className="sr-only">Devon Soto</span>
         </Link>
         <Menu as="div" className="relative ml-3 sm:hidden">
@@ -108,7 +108,7 @@ export default function Header() {
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-white hover:text-sec scroll-smooth"
-            >
+              legacyBehavior>
               {item.name}
             </Link>
           ))}
