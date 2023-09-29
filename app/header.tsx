@@ -21,7 +21,7 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
   return (
-    <header className=" bg-blackPrim fixed w-full z-10">
+    <header className=" fixed z-10 w-full bg-blackPrim">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:px-8"
         aria-label="Global"
@@ -53,7 +53,7 @@ export default function Header() {
                     href="#about"
                     className={classNames(
                       active ? "bg-gray-100" : "",
-                      "block px-4 py-2 text-sm text-gray-700"
+                      "block px-4 py-2 text-sm text-gray-700",
                     )}
                   >
                     About
@@ -92,7 +92,7 @@ export default function Header() {
                     href="#contact"
                     className={classNames(
                       active ? "bg-gray-100" : "",
-                      "block px-4 py-2 text-sm text-gray-700"
+                      "block px-4 py-2 text-sm text-gray-700",
                     )}
                   >
                     Contact Me
@@ -107,7 +107,7 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-white hover:text-sec scroll-smooth"
+              className="scroll-smooth text-sm font-semibold leading-6 text-white hover:text-sec"
             >
               {item.name}
             </Link>

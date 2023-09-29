@@ -12,7 +12,7 @@ const cors = Cors({
 function runMiddleware(
   req: NextApiRequest,
   res: NextApiResponse,
-  fn: Function
+  fn: Function,
 ) {
   return new Promise((resolve, reject) => {
     fn(req, res, (result: any) => {
@@ -27,7 +27,7 @@ function runMiddleware(
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   // Run the middleware
   await runMiddleware(req, res, cors);
