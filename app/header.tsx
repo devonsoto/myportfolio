@@ -1,17 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
-import { Popover, Transition, Menu } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Transition, Menu } from "@headlessui/react";
+import { List, Moon } from "@phosphor-icons/react";
 
+import { useState, useEffect } from "react";
 const navigation = [
   { name: "About", href: "#about" },
-  // { name: "Projects", href: "#projects" },
-  // { name: "Technologies", href: "#technologies" },
+  { name: "Projects", href: "#projects" },
+  { name: "Technologies", href: "#technologies" },
   { name: "Contact Me", href: "#contact" },
 ];
 
@@ -20,21 +18,39 @@ function classNames(...classes: string[]) {
 }
 
 export default function Header() {
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
-    <header className=" fixed z-10 w-full bg-blackPrim">
+    <header className="bg-light-gray shadow-md dark:bg-dark-gray dark:text-white ">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:px-8"
+        className="mx-auto flex max-w-7xl items-center  justify-between p-6 sm:px-8"
         aria-label="Global"
       >
-        <span>Devon Soto</span>
-        <Link href="/" className="-m-1.5 p-1.5">
-          <span className="sr-only">Devon Soto</span>
-        </Link>
-        <Menu as="div" className="relative ml-3 sm:hidden">
+        <div className="flex items-center">
+          <span className=" mr-4 text-2xl font-semibold">Devon Soto</span>
+          <Link href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">Devon Soto</span>
+          </Link>
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="rounded-full  p-2 hover:bg-gray-200 dark:hover:bg-black"
+          >
+            <Moon size={24} fill={darkMode ? "white" : "black"} />
+          </button>
+        </div>
+        <Menu as="div" className="relative ml-3 md:hidden">
           <div>
             <Menu.Button className="flex rounded-full  text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
               <span className="sr-only">Open user menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <List className="h-6 w-6" aria-hidden="true" />
             </Menu.Button>
           </div>
           <Transition
@@ -60,13 +76,13 @@ export default function Header() {
                   </Link>
                 )}
               </Menu.Item>
-              {/* <Menu.Item>
+              <Menu.Item>
                 {({ active }) => (
                   <Link
                     href="#projects"
                     className={classNames(
                       active ? "bg-gray-100" : "",
-                      "block px-4 py-2 text-sm text-gray-700"
+                      "block px-4 py-2 text-sm text-gray-700",
                     )}
                   >
                     Projects
@@ -79,13 +95,13 @@ export default function Header() {
                     href="#technologies"
                     className={classNames(
                       active ? "bg-gray-100" : "",
-                      "block px-4 py-2 text-sm text-gray-700"
+                      "block px-4 py-2 text-sm text-gray-700",
                     )}
                   >
                     Technologies
                   </Link>
                 )}
-              </Menu.Item> */}
+              </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
                   <Link
@@ -102,12 +118,12 @@ export default function Header() {
             </Menu.Items>
           </Transition>
         </Menu>
-        <div className="hidden sm:flex sm:gap-x-12">
+        <div className="hidden items-center md:flex md:gap-x-12">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="scroll-smooth text-sm font-semibold leading-6 text-white hover:text-sec"
+              className="text-green scroll-smooth text-sm font-semibold leading-6  hover:text-ai-cyan-hover dark:text-ai-cyan dark:hover:text-ai-cyan-dark-hover"
             >
               {item.name}
             </Link>

@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
+    "@phosphor-icons/react": "^2.0.13",
+    "@phosphor-icons/web": "^2.0.3",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
