@@ -123,7 +123,7 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-green scroll-smooth text-sm font-semibold leading-6  hover:text-ai-cyan-hover dark:text-ai-cyan dark:hover:text-ai-cyan-dark-hover"
+              className="scroll-smooth text-sm font-semibold leading-6  hover:text-ai-cyan-hover dark:text-ai-cyan dark:hover:text-ai-cyan-dark-hover"
             >
               {item.name}
             </Link>

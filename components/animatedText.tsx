@@ -26,7 +26,7 @@ export const AnimatedText = () => {
   useEffect(() => {
     const wordTimeout = setInterval(() => {
       setWordOrder(
-        (prevWordOrder) => (prevWordOrder + 1) % WORDS_TO_ANIMATE.length
+        (prevWordOrder) => (prevWordOrder + 1) % WORDS_TO_ANIMATE.length,
       );
     }, WORD_CHANGE_INTERVAL_MS);
 
@@ -34,10 +34,10 @@ export const AnimatedText = () => {
   }, []);
 
   return (
-    <h2>
-      <span className={styles[fadeProp.fade]}>
+    <h2 className=" text-dark-gray dark:text-ai-cyan">
+      <span className={styles[fadeProp.fade] + "text-dark-grey"}>
         {WORDS_TO_ANIMATE[wordOrder]}
-      </span>{" "}
+      </span>
     </h2>
   );
 };

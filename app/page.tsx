@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 
@@ -11,21 +10,24 @@ import { Projects } from "@/app/projects/projects";
 import Contact from "./contact";
 import Technologies from "./technology";
 import VerticalIndicator from "@/components/verticalNavigation";
+import { Metadata } from "next";
+import Quote from "@/components/quote";
+
+export const metadata: Metadata = {
+  title: "Devon Soto",
+  description: "CEO & CO-Founder of Empowering Software",
+};
 
 export default function Home() {
+  console.log("here");
   return (
     <>
-      <Head>
-        <title>Devon Soto</title>
-        <meta name="description" content="CEO & CO-Founder" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* TODO: Change this in the future when we have something */}
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Header />
       {/* <main className={styles.main}> */}
-      <VerticalIndicator />
+      {/* <VerticalIndicator /> */}
       <div className="flex min-h-full items-center justify-center text-white dark:bg-black">
+        {/* <AnimatedText /> */}
+        <Quote />
         {/* <div className={styles.description}>
           <div className={styles.name}>
             <p>I&apos;m Devon Soto</p>
