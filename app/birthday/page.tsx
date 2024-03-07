@@ -1,4 +1,5 @@
 import Quote from "@/components/quote";
+import Spotify from "./spotify";
 
 export default function page() {
   return (
@@ -11,6 +12,7 @@ export default function page() {
       </p>
       <Quote />
       <div>Birthday</div>
+      <Spotify />
     </div>
   );
 }
