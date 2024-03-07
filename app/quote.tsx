@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { revalidatePath } from "next/cache";
 
 const openai = new OpenAI();
 
@@ -18,6 +19,8 @@ const Quote = async () => {
   const quote = response.choices[0].message.content;
 
   console.log("completions", response.choices[0]);
+
+  revalidatePath("/birthday", "layout");
 
   return (
     <>
