@@ -1,4 +1,4 @@
-import Quote from "@/components/quote";
+import Quote from "@/app/quote";
 import Spotify from "./spotify";
 
 export default function page() {

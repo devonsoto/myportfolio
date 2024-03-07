@@ -13,15 +13,17 @@ async function getQuote() {
   return completion;
 }
 
-export default async function Quote() {
+const Quote = async () => {
   const response = await getQuote();
+  const quote = response.choices[0].message.content
 
   console.log("completions", response.choices[0]);
 
   return (
-    <div>
-      <p>{response.choices[0].message.content}</p>
-      {/* <p>Quote goes here</p> */}
-    </div>
+    <>
+      {quote}
+    </>
   );
 }
+
+export default Quote;

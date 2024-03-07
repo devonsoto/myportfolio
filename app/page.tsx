@@ -11,7 +11,7 @@ import Contact from "./contact";
 import Technologies from "./technology";
 import VerticalIndicator from "@/components/verticalNavigation";
 import { Metadata } from "next";
-import Quote from "@/components/quote";
+import Quote from "@/app/quote";
 
 export const metadata: Metadata = {
   title: "Devon Soto",
