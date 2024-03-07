@@ -22,6 +22,7 @@ export default function Home() {
   // console.log("here");
   return (
     <>
+    <p>nothing to see here.....</p>
       {/* <Header /> */}
       {/* <main className={styles.main}> */}
       {/* <VerticalIndicator /> */}

@@ -6,7 +6,7 @@ async function getQuote() {
   const completion = await openai.chat.completions.create({
     messages: [{ role: "system", content: "Give me the quote of the day" }],
     model: "gpt-4",
-    temperature: .9,
+    temperature: 0.9,
     // model: "gpt-3.5-turbo",
   });
 
@@ -15,15 +15,16 @@ async function getQuote() {
 
 const Quote = async () => {
   const response = await getQuote();
-  const quote = response.choices[0].message.content
+  const quote = response.choices[0].message.content;
 
   console.log("completions", response.choices[0]);
 
   return (
     <>
-      {quote}
+      <p>Here is a random quote from our AI friend...</p>
+      <p>{quote}</p>
     </>
   );
-}
+};
 
 export default Quote;
