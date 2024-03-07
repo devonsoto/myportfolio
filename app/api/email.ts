@@ -1,43 +1,27 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { error } from "console";
-import type { NextApiRequest, NextApiResponse } from "next";
-import * as postmark from "postmark";
+// import { EmailTemplate } from "@/components/emailTemplate";
+// import { NextRequest, NextResponse } from "next/server";
+// import { Resend } from "resend";
 
-// console.log(process.env.)
-const serverToken = process.env.postmarkToken || "";
-// console.log(serverToken);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
-let client = new postmark.ServerClient(serverToken);
+// export async function POST(req: Request, res: NextResponse) {
+//   try {
+//     const requestInfo = await req.json();
+//     console.log(requestInfo);
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<any>
-) {
-  const { name, email, message } = req.body;
+//     const data = await resend.emails.send({
+//       from: "Acme <onboarding@resend.dev>",
+//       to: ["online.devon@gmail.com"],
+//       subject: "Hello world",
+//       text: "Hello world",
+//       react: EmailTemplate({
+//         artist: "Arlissa",
+//         track: "I hate Giving you everything",
+//       }),
+//     });
 
-  const data = {
-    name,
-    email,
-    message,
-  };
-
-  console.log(data);
-
-  client
-    .sendEmail({
-      From: "devon@devonsoto.com",
-      To: "online.devon@gmail.com",
-      Subject: `You may have a client from ${email}`,
-      HtmlBody: message,
-    })
-    .then((response) => {
-      console.log("Sending message");
-      console.log(response.To);
-      console.log(response.Message);
-      res.status(200).json({ name: "John Doe" });
-    })
-    .catch((error) => {
-      console.log(error);
-      console.log("There seemed it be in error, try again soon");
-    });
-}
+//     return Response.json(data);
+//   } catch (error) {
+//     return Response.json({ error });
+//   }
+// }

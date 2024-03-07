@@ -1,3 +1,5 @@
+import SpotifyForm from "./spotifyForm";
+
 const clientId = process.env.CLIENT_ID || "";
 const clientSecret = process.env.CLIENT_SECRET || "";
 const code = undefined;
@@ -77,17 +79,29 @@ const addTrackToPlaylist = async (
   return response.json();
 };
 
+const login = async () => {
+  const response = await fetch("http://localhost:3000/api/login", {
+    method: "GET",
+  });
+
+  return response.json();
+};
+
 export default async function Spotify() {
-  const response = await getToken();
-  const artistResponse = await searchArtist(response, "Kanye West", "Runway");
-  const addTrackResponse = await addTrackToPlaylist(
-    response,
-    playlistId,
-    "3DK6m7It6Pw857FcQftMds",
-  );
-  console.log(artistResponse.tracks);
-  console.log(response);
-  console.log(addTrackResponse);
+  // const response = await getToken();
+  // const artistResponse = await searchArtist(response, "Kanye West", "Runway");
+
+  // const loginResponse = await login();
+  // console.log("loginResponse", loginResponse);
+
+  // const addTrackResponse = await addTrackToPlaylist(
+  //   response,
+  //   playlistId,
+  //   "3DK6m7It6Pw857FcQftMds",
+  // );
+  // console.log(artistResponse.tracks);
+  // console.log(response);
+  // console.log(addTrackResponse);
 
   // const response = getSpotifyToken();
 
@@ -100,8 +114,26 @@ export default async function Spotify() {
   // }
 
   return (
-    <div>
-      <div>spotify</div>
+    <div className="flex flex-col gap-y-5">
+      <div>
+        Whether you're joining us or not, share your favorite song for the
+        playlist!
+      </div>
+
+      <iframe
+        className="rounded-xl"
+        src="https://open.spotify.com/embed/playlist/6XFJjoGtpc5vFYGaZwjUbU?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameBorder="0"
+        // allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+
+      <SpotifyForm />
     </div>
   );
 }
+
+// utils/generateRandomString.js
