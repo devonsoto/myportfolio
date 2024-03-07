@@ -13,7 +13,7 @@ async function getQuote() {
       },
     ],
     model: "gpt-4",
-    temperature: 0.9,
+    temperature: 2,
     // model: "gpt-3.5-turbo",
   });
 
