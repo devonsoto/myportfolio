@@ -1,26 +1,27 @@
-import { connect } from "http2";
+import OpenAI from "openai";
 
-async function getData() {
-  console.log("get data");
-  const res = await fetch("http://localhost:3000/api/quote");
+const openai = new OpenAI();
 
-  // console.log(res);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+async function getQuote() {
+  const completion = await openai.chat.completions.create({
+    messages: [{ role: "system", content: "Give me the quote of the day" }],
+    // model: "gpt-4",
+    model: "gpt-3.5-turbo",
+  });
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
+  return completion;
 }
 
-export default function Quote() {
-  const response = getData();
+export default async function Quote() {
+  // const response = await getQuote();
 
-  console.log("-------t--------");
-  console.log("response", response);
+  // console.log("completions", response.choices[0]);
 
-  return <div>test</div>;
+  return (
+    <div>
+      <h1>Today's Quote</h1>
+      <p>Quote goes here</p>
+      {/* <p>{response.choices[0].message.content}</p> */}
+    </div>
+  );
 }

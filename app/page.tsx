@@ -19,16 +19,16 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  console.log("here");
+  // console.log("here");
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <main className={styles.main}> */}
       {/* <VerticalIndicator /> */}
-      <div className="flex min-h-full items-center justify-center text-white dark:bg-black">
-        {/* <AnimatedText /> */}
-        <Quote />
-        {/* <div className={styles.description}>
+      {/* <div className="flex min-h-full items-center justify-center text-white dark:bg-black"> */}
+      {/* <AnimatedText /> */}
+      {/* <Quote /> */}
+      {/* <div className={styles.description}>
           <div className={styles.name}>
             <p>I&apos;m Devon Soto</p>
             <div className="flex w-full text-sec">
@@ -36,7 +36,7 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-      </div>
+      {/* </div> */}
 
       {/* <Whoami /> */}
 
