@@ -5,7 +5,13 @@ const openai = new OpenAI();
 
 async function getQuote() {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "Give me the quote of the day" }],
+    messages: [
+      {
+        role: "system",
+        content:
+          "Give me the quote of the day, choose from it either being funny, about love, inspiration, AI, motivation, old school or whatever you can come up with. Only return the quote and who it is by.",
+      },
+    ],
     model: "gpt-4",
     temperature: 0.9,
     // model: "gpt-3.5-turbo",
