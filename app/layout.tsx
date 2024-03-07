@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 
 export const metadata = {
-  title: "Devon Soto",
+  title: "Birthday Bash",
   description: "Devon Soto's personal website",
 };
 
