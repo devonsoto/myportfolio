@@ -12,14 +12,14 @@ async function getQuote() {
   return completion;
 }
 
-export default async function Quote() {
+export default function Quote() {
   // const response = await getQuote();
 
   // console.log("completions", response.choices[0]);
 
   return (
     <div>
-      <h1>Today's Quote</h1>
+      <h1>Today&apos;s Quote</h1>
       <p>Quote goes here</p>
       {/* <p>{response.choices[0].message.content}</p> */}
     </div>

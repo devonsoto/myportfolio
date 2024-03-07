@@ -50,9 +50,9 @@ export default function SpotifyForm() {
   };
 
   return (
-    <Form {...form}>
+    <Form {...(form as any)}>
       <FormDescription>
-        If you don't have a spotify account, just sumbit it here and it'll be
+        If you don&apos;t have a spotify account, just sumbit it here and it&apos;ll be
         added on its own !
       </FormDescription>
       <form onSubmit={form.handleSubmit(onSubmitHandler)} className="space-y-6">
@@ -86,7 +86,6 @@ export default function SpotifyForm() {
         <Button
           type="submit"
           variant={"outline"}
-          onSubmit={() => onSubmitHandler}
         >
           Submit
         </Button>

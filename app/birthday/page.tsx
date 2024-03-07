@@ -8,7 +8,7 @@ export default function page() {
         <p className="text-4xl">Need a reason to ski?</p>
         <p className="text-4xl">Come celebrate my 27th birthday at 🔑🗿 ! </p>
         <p>
-          We'll be parked in the 🇵🇪 lot so we can tailgate for lunch and have a
+          We&apos;ll be parked in the 🇵🇪 lot so we can tailgate for lunch and have a
           couple brewskis.
         </p>
       </div>

@@ -87,7 +87,7 @@ const login = async () => {
   return response.json();
 };
 
-export default async function Spotify() {
+export default function Spotify() {
   // const response = await getToken();
   // const artistResponse = await searchArtist(response, "Kanye West", "Runway");
 
@@ -116,7 +116,7 @@ export default async function Spotify() {
   return (
     <div className="flex flex-col gap-y-5">
       <div>
-        Whether you're joining us or not, share your favorite song for the
+        Whether you&apos;re joining us or not, share your favorite song for the
         playlist!
       </div>
 
