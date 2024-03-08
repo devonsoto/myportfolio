@@ -12,7 +12,7 @@ export default function page() {
           have a couple brewskis.
         </p>
         <p className="font-medium">
-          March 15, Meet at 830ish at Peru Lot and around 12ish for lunch!
+          March 15, Meet at 830ish at Peru Lot or around 12ish for lunch!
         </p>
       </div>
       <Spotify />

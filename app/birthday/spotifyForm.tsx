@@ -2,9 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendInfoEmail } from "@/lib/email";
+import { useState } from "react";
 import {
   Form,
   FormControl,
@@ -29,6 +30,7 @@ const formSchema = z.object({
 });
 
 export default function SpotifyForm() {
+  const [success, setSuccess] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -41,6 +43,7 @@ export default function SpotifyForm() {
     try {
       const response = await sendInfoEmail(values.artist, values.track);
       console.log("response", response);
+      setSuccess(true);
       console.log("success");
     } catch {
       console.log("error sending email");
@@ -50,10 +53,10 @@ export default function SpotifyForm() {
   };
 
   return (
-    <Form {...(form as any)}>
+    <Form {...form}>
       <FormDescription>
-        If you don&apos;t have a spotify account, just sumbit it here and it&apos;ll be
-        added on its own !
+        If you don&apos;t have a spotify account, just submit it here and
+        it&apos;ll be added on its own !
       </FormDescription>
       <form onSubmit={form.handleSubmit(onSubmitHandler)} className="space-y-6">
         <FormField
@@ -83,13 +86,16 @@ export default function SpotifyForm() {
             </FormItem>
           )}
         />
-        <Button
-          type="submit"
-          variant={"outline"}
-        >
+        <Button type="submit" variant={"outline"}>
           Submit
         </Button>
       </form>
+
+      {success && (
+        <div className="font-bold">
+          Thanks! It will be added automatically later.
+        </div>
+      )}
     </Form>
   );
 }

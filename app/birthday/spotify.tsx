@@ -1,5 +1,8 @@
 import SpotifyForm from "./spotifyForm";
+import Link from "next/link";
 
+const spotifyLink =
+  "https://open.spotify.com/playlist/6XFJjoGtpc5vFYGaZwjUbU?si=57fa0295b35f4bdc&pt=06f7e85cabd351ebca316547ba022c12";
 const clientId = process.env.CLIENT_ID || "";
 const clientSecret = process.env.CLIENT_SECRET || "";
 const code = undefined;
@@ -115,22 +118,35 @@ export default function Spotify() {
 
   return (
     <div className="flex flex-col gap-y-5">
-      <div>
-        Whether you&apos;re joining us or not, share your favorite song for the
-        playlist!
+      <div className="flex flex-col items-center">
+        <p>
+          Whether you&apos;re joining us or not, share your favorite song for
+          the playlist! If clicking the picture doesn&apos;t let you add songs,
+          then click ---{">"}
+          <Link className="font-bold" href={spotifyLink}>
+            Add songs here !
+          </Link>
+        </p>
       </div>
 
-      <iframe
-        className="rounded-xl"
-        src="https://open.spotify.com/embed/playlist/6XFJjoGtpc5vFYGaZwjUbU?utm_source=generator&theme=0"
-        width="100%"
-        height="352"
-        frameBorder="0"
-        // allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"
-      ></iframe>
-
+      <div className="relative">
+        <iframe
+          className="rounded-xl"
+          src="https://open.spotify.com/embed/playlist/6XFJjoGtpc5vFYGaZwjUbU?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          // allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <Link
+          target="_blank"
+          rel="noreferrer noopener"
+          href={spotifyLink}
+          className="absolute left-0 top-0 z-10 h-full w-full cursor-pointer"
+        />
+      </div>
       <SpotifyForm />
     </div>
   );
