@@ -6,6 +6,7 @@ export const metadata = {
 };
 
 import { Inter as FontSans } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { cn } from "@/lib/utils";
 
@@ -23,11 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-background min-h-screen font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
         )}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
