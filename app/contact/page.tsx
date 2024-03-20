@@ -74,7 +74,7 @@ export default function Contact() {
 
   return (
     <div className="flex h-full w-full justify-center p-6">
-      <Card className="max-w-3xl">
+      <Card className="h-screen max-w-3xl">
         <CardHeader>
           <CardTitle>Let&apos;s Connect !</CardTitle>
           <CardDescription>
