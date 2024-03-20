@@ -19,3 +19,23 @@ export const sendInfoEmail = async (artist: string, track: string) => {
 
   return response;
 };
+
+export const SendContactEmail = async (
+  name: string,
+  email: string,
+  message: string,
+) => {
+  const response = await resend.emails.send({
+    from: "contact@devonsoto.com",
+    to: ["online.devon@gmail.com"],
+    subject: "Hello world",
+    text: "Hello world",
+    react: EmailTemplate({
+      name,
+      email,
+      message,
+    }),
+  });
+
+  return response;
+};

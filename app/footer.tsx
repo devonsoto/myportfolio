@@ -46,8 +46,8 @@ const navigation = {
 export const Footer = () => {
   return (
     <footer className="bg-blackPrim">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-8 sm:py-8 lg:px-8">
-        <div className="mt-10 flex justify-center space-x-10">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-6 sm:py-8 lg:px-8">
+        <div className=" mt-2 flex justify-center space-x-10">
           {navigation.social.map((item) => (
             <a
               key={item.name}

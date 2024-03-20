@@ -22,9 +22,10 @@ export default function Home() {
   // console.log("here");
   return (
     <>
-      <p>nothing to see here.....</p>
+      {/* <main className="flex min-h-screen flex-col items-center justify-between p-24"> */}
+      <Whoami />
+      {/* </main> */}
       {/* <Header /> */}
-      {/* <main className={styles.main}> */}
       {/* <VerticalIndicator /> */}
       {/* <div className="flex min-h-full items-center justify-center text-white dark:bg-black"> */}
       {/* <AnimatedText /> */}
@@ -46,7 +47,7 @@ export default function Home() {
         <Projects />
         <Technologies /> */}
       {/* <Contact /> */}
-      {/* </main> */}
+      {/* </main÷÷> */}
       {/* <Footer /> */}
     </>
   );

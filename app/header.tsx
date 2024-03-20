@@ -6,11 +6,13 @@ import { Transition, Menu } from "@headlessui/react";
 import { List, Moon } from "@phosphor-icons/react";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 const navigation = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Technologies", href: "#technologies" },
-  { name: "Contact Me", href: "#contact" },
+  { name: "About", href: "/about" },
+  // { name: "Projects", href: "/projects" },
+  // { name: "Technologies", href: "/technologies" },
+  { name: "Contact Me", href: "/contact" },
 ];
 
 function classNames(...classes: string[]) {
@@ -19,6 +21,9 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
   const [darkMode, setDarkMode] = useState(true);
+  const pathname = usePathname();
+
+  console.log({ pathname });
 
   useEffect(() => {
     if (darkMode) {
@@ -29,13 +34,17 @@ export default function Header() {
   }, [darkMode]);
 
   return (
-    <header className="bg-light-gray shadow-md dark:bg-dark-gray dark:text-white ">
+    <header className="bg-light-gray dark:bg-dark-gray shadow-md dark:text-white ">
       <nav
         className="mx-auto flex max-w-7xl items-center  justify-between p-6 sm:px-8"
         aria-label="Global"
       >
         <div className="flex items-center">
-          <span className=" mr-4 text-2xl font-semibold">Devon Soto</span>
+          <Link href={"/"}>
+            <span className=" mr-4 cursor-pointer text-2xl font-semibold">
+              Devon Soto
+            </span>
+          </Link>
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Devon Soto</span>
           </Link>
@@ -66,7 +75,7 @@ export default function Header() {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="#about"
+                    href="about"
                     className={classNames(
                       active ? "bg-gray-100" : "",
                       "block px-4 py-2 text-sm text-gray-700",
@@ -76,10 +85,10 @@ export default function Header() {
                   </Link>
                 )}
               </Menu.Item>
-              <Menu.Item>
+              {/* <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="#projects"
+                    href="projects"
                     className={classNames(
                       active ? "bg-gray-100" : "",
                       "block px-4 py-2 text-sm text-gray-700",
@@ -88,11 +97,11 @@ export default function Header() {
                     Projects
                   </Link>
                 )}
-              </Menu.Item>
-              <Menu.Item>
+              </Menu.Item> */}
+              {/* <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="#technologies"
+                    href="technologies"
                     className={classNames(
                       active ? "bg-gray-100" : "",
                       "block px-4 py-2 text-sm text-gray-700",
@@ -101,11 +110,11 @@ export default function Header() {
                     Technologies
                   </Link>
                 )}
-              </Menu.Item>
+              </Menu.Item> */}
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="#contact"
+                    href="contact"
                     className={classNames(
                       active ? "bg-gray-100" : "",
                       "block px-4 py-2 text-sm text-gray-700",
@@ -119,15 +128,22 @@ export default function Header() {
           </Transition>
         </Menu>
         <div className="hidden items-center md:flex md:gap-x-12">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="scroll-smooth text-sm font-semibold leading-6  hover:text-ai-cyan-hover dark:text-ai-cyan dark:hover:text-ai-cyan-dark-hover"
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item) => {
+            const isActive = pathname === item.href;
+
+            const linkClass = cn(
+              "hover:text-ai-cyan-hover dark:text-ai-cyan dark:hover:text-ai-cyan-dark-hover scroll-smooth text-sm font-semibold leading-6",
+              {
+                "border-b-2 border-ai-cyan": isActive, // Example active style: underline with a specific color
+                // Add more conditional styles for active state if needed
+              },
+            );
+            return (
+              <Link key={item.name} href={item.href} className={linkClass}>
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
       </nav>
     </header>
