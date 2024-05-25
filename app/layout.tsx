@@ -1,10 +1,5 @@
 import "../styles/globals.css";
 
-export const metadata = {
-  title: "Birthday Bash",
-  description: "Devon Soto's personal website",
-};
-
 import { Inter as FontSans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -12,10 +7,17 @@ import { cn } from "@/lib/utils";
 import Header from "./header";
 import Footer from "./footer";
 import { Toaster } from "@/components/ui/toaster";
+import { Metadata } from "next";
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
+
+export const metadata: Metadata = {
+  title: "Devon Soto",
+  description: "CEO & CO-Founder of Empowering Software",
+};
 
 export default function RootLayout({
   children,
@@ -32,11 +34,7 @@ export default function RootLayout({
       >
         <SpeedInsights />
         <Header />
-        <main className="flex-1 overflow-auto">{children}</main>
-        {/* <main className="h-full w-full">{children}</main> */}
-        {/* <main className="flex w-full flex-1 items-center justify-center overflow-auto">
-          <div className="mx-auto w-full max-w-4xl p-4">{children}</div>
-        </main> */}
+        <main className="flex flex-1 flex-col">{children}</main>
         <Toaster />
         <Footer />
       </body>

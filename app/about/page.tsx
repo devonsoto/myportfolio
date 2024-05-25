@@ -16,16 +16,7 @@ const aboutSections = [
         The leap from software engineering to entrepreneurship was a natural one
         for me. I&apos;ve always believed that technology has the power to
         transform lives, and I wanted to be at the forefront of that
-        transformation. With a few crazy ideas and a lot of caffeine, I embarked
-        on the journey of building my own company. It&apos;s been a
-        rollercoaster of highs and lows, but I wouldn&apos;t trade the
-        experience for the world. Every setback has been a lesson, and every
-        success, a moment of pure joy.
-        <strong>
-          {" "}
-          Currently, I&apos;m working on the problem of how to get young adults
-          to invest confidently.
-        </strong>
+        transformation.
       </>
     ),
   },
@@ -37,13 +28,12 @@ const aboutSections = [
   {
     title: "Looking Ahead",
     content:
-      "As I look to the future, Im excited about the possibilities that lie ahead. Whether it's developing the next big fintech solution, making savvy investment choices, or simply enjoying the journey, I'm up for the challenge. I'm currently on the lookout for new opportunities to learn, grow, and make a difference. ",
+      "I'm currently looking for software engineering position at an innovative company. If you are hiring, give me a call.",
   },
 ];
 
 export default function About() {
   return (
-    // <ScrollArea>
     <div className="flex h-full w-full justify-center">
       <div className="flex h-full max-w-2xl flex-col space-y-8 py-8 dark:text-white">
         <div className="flex flex-col space-y-8 p-4 dark:text-white">

@@ -74,7 +74,7 @@ export default function Contact() {
 
   return (
     <div className="flex h-full w-full justify-center p-6">
-      <Card className="h-screen max-w-3xl">
+      <Card className="max-w-3xl">
         <CardHeader>
           <CardTitle>Let&apos;s Connect !</CardTitle>
           <CardDescription>
@@ -127,7 +127,7 @@ export default function Contact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Bio</FormLabel>
+                    <FormLabel>Message</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Tell me more !"

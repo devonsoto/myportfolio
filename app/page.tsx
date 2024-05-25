@@ -7,16 +7,10 @@ import Header from "@/app/header";
 import { Whoami } from "@/app/whoami/whoami";
 import { AnimatedText } from "@/components/animatedText";
 import { Projects } from "@/app/projects/projects";
-import Contact from "./contact";
 import Technologies from "./technology";
 import VerticalIndicator from "@/components/verticalNavigation";
-import { Metadata } from "next";
-import Quote from "@/app/quote";
 
-export const metadata: Metadata = {
-  title: "Devon Soto",
-  description: "CEO & CO-Founder of Empowering Software",
-};
+import Quote from "@/app/quote";
 
 export default function Home() {
   // console.log("here");
