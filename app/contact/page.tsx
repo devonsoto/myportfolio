@@ -51,7 +51,6 @@ export default function Contact() {
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
     const { name, email, message } = data;
 
     try {

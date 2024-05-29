@@ -23,8 +23,6 @@ export default function Header() {
   const [darkMode, setDarkMode] = useState(true);
   const pathname = usePathname();
 
-  console.log({ pathname });
-
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
