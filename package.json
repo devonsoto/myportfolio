@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.616.0",
+    "@aws-sdk/s3-request-presigner": "^3.616.0",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@hookform/resolvers": "^3.3.4",
@@ -24,6 +26,7 @@
     "@vercel/analytics": "^1.0.0",
     "@vercel/speed-insights": "^1.0.10",
     "autoprefixer": "^10.4.14",
+    "aws-sdk": "^2.1658.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cookie": "^0.6.0",

@@ -9,10 +9,10 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 const navigation = [
-  { name: "About", href: "/about" },
+  { name: "About", href: "/portfolio/about" },
   // { name: "Projects", href: "/projects" },
   // { name: "Technologies", href: "/technologies" },
-  { name: "Contact Me", href: "/contact" },
+  { name: "Contact Me", href: "/portfolio/contact" },
 ];
 
 function classNames(...classes: string[]) {
@@ -20,7 +20,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Header() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -73,7 +73,7 @@ export default function Header() {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="about"
+                    href="/portfolio/about"
                     className={classNames(
                       active ? "bg-gray-100" : "",
                       "block px-4 py-2 text-sm text-gray-700",
@@ -112,7 +112,7 @@ export default function Header() {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="contact"
+                    href="/portfolio/contact"
                     className={classNames(
                       active ? "bg-gray-100" : "",
                       "block px-4 py-2 text-sm text-gray-700",

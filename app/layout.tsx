@@ -33,10 +33,10 @@ export default function RootLayout({
         )}
       >
         <SpeedInsights />
-        <Header />
+        {/* <Header /> */}
         <main className="flex flex-1 flex-col">{children}</main>
         <Toaster />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
