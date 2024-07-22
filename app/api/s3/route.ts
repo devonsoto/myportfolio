@@ -90,9 +90,19 @@ export async function POST(request: Request) {
     const buffer = Buffer.from(await file.arrayBuffer());
     const fileName = await uploadFileToS3(buffer, file.name);
 
+    // Generate a signed URL for the uploaded file
+    const url = await getSignedUrl(
+      s3Client,
+      new GetObjectCommand({
+        Bucket: process.env.AWS_S3_BUCKET_NAME,
+        Key: fileName,
+      }),
+      { expiresIn: 3600 },
+    );
+
     // do check here, wrong file, sizes, etc
 
-    return NextResponse.json({ success: true, fileName });
+    return NextResponse.json({ success: true, fileName, url, key: fileName });
   } catch (error) {
     return NextResponse.json({ error });
   }

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { FileUploadForm } from "../FileUploadForm/FileUploadForm";
 
 interface Image {
   url: string;
@@ -9,6 +10,14 @@ interface Image {
 
 export const ImageGallery = () => {
   const [images, setImages] = useState<Image[]>([]);
+  const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>(
+    {},
+  );
+
+  const handleImageUpload = (image: { url: string; key: string }) => {
+    console.log("image", image);
+    setImages((prevImages) => [...prevImages, image]);
+  };
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -32,14 +41,18 @@ export const ImageGallery = () => {
 
   console.log("images", images);
 
+  const handleLoadingComplete = (key: string) => {
+    setLoadedImages((prev) => ({ ...prev, [key]: true }));
+  };
+
   return (
-    <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
-      {images.map((image) => (
-        <div
-          key={image.key}
-          className="after:content shadow-highlight after:shadow-highlight relative mb-5 flex h-[629px] flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-white/10 px-6 pb-16 pt-64 text-center text-white after:pointer-events-none after:absolute after:inset-0 after:rounded-lg lg:pt-0"
-        >
+    <div>
+      <FileUploadForm onImageUpload={handleImageUpload} />
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        {images.map((image) => (
           <Image
+            key={image.key}
             src={image.url}
             className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
             alt="Uploaded image"
@@ -47,12 +60,13 @@ export const ImageGallery = () => {
             height={480}
             style={{ transform: "translate3d(0, 0, 0)" }}
             sizes="(max-width: 640px) 100vw,
-        (max-width: 1280px) 50vw,
-        (max-width: 1536px) 33vw,
-        25vw"
+            (max-width: 1280px) 50vw,
+            (max-width: 1536px) 33vw,
+            25vw"
+            onLoadingComplete={() => handleLoadingComplete(image.key)}
           />
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
