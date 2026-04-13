@@ -28,7 +28,7 @@ const aboutSections = [
   {
     title: "Looking Ahead",
     content:
-      "I'm currently looking for software engineering position at an innovative company. If you are hiring, give me a call.",
+      "I am currently a software engineer at Capital One, always looking to build something cool !",
   },
 ];
 

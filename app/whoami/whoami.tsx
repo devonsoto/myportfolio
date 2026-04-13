@@ -1,24 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
 import { getQuote } from "@/lib/ai";
 
+const quote = getQuote();
+
 export const Whoami = () => {
-  const [quote, setQuote] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    getQuote()
-      .then((res) => {
-        setQuote(res.content as string);
-        console.log(res);
-      })
-      .catch((e) => {
-        console.error(e);
-      })
-      .finally(() => setIsLoading(false));
-  }, []);
-
   return (
     <div className="flex h-full w-full flex-1 flex-col items-center justify-center space-y-10 p-6">
       <div className=" flex h-full w-full max-w-2xl   flex-col items-center justify-center gap-6">
@@ -30,7 +15,6 @@ export const Whoami = () => {
           software.
         </p>
       </div>
-      {isLoading && <div>Loading...</div>}
       {quote && <div>{quote}</div>}
     </div>
   );

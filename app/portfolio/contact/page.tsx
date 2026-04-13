@@ -2,7 +2,9 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { z } from "zod";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -41,6 +43,7 @@ const FormSchema = z.object({
 });
 
 export default function Contact() {
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -53,8 +56,16 @@ export default function Contact() {
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     const { name, email, message } = data;
 
+    if (!captchaToken) {
+      toast({
+        variant: "destructive",
+        title: "Please complete the CAPTCHA before submitting.",
+      });
+      return;
+    }
+
     try {
-      const response = await SendContactEmail(name, email, message);
+      const response = await SendContactEmail(name, email, message, captchaToken);
 
       if (response) {
         toast({
@@ -137,6 +148,12 @@ export default function Contact() {
                     <FormMessage />
                   </FormItem>
                 )}
+              />
+
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                onSuccess={(token) => setCaptchaToken(token)}
+                onExpire={() => setCaptchaToken(null)}
               />
 
               <Button type="submit">Submit</Button>
